@@ -1,0 +1,183 @@
+Today's agenda
+1 .comparison between c and cpp
+2 .difference between c and cpp
+3 . how to use array, how to traverse array using cpp
+4 . basic problem solving with cpp 
+5 . Final Prblem , [ user input an array you have to relace maximum and minimum number]
+
+
+
+
+//how to take input an array
+#include<iostream>
+using namespace std;
+int A[100];
+int i,j,k,n;
+
+void inputArrayElement(int size);
+void displayValue(int A[],int size);
+int main()
+{
+    cout<<"Enter array Size : ";
+    cin>>n;
+    inputArrayElement(n);
+    displayValue(A,n);
+    return 0;
+}
+
+void inputArrayElement(int size){
+    for(int i=0;i<size;i++){
+        cout<<"Enter Data ";
+        cin>>A[i];
+    }
+}
+
+void displayValue(int A[],int size){
+    int i = 0;
+    while(i<size){
+        cout<<A[i]<<" ";
+        i++;
+    }
+}
+
+
+
+algorithm for perfect number : 
+n = 6
+for 1 , n-1;
+	n%1
+	sum = 0;
+
+#include<iostream>
+using namespace std;
+
+bool isPerfect(int n);
+int main()
+{
+    int n;
+    cout<<"Enter a number : ";
+    cin>>n;
+    if(isPerfect(n)){
+        cout<<"Perfect Number";
+    }else{
+        cout<<"Not Perfect";
+    }
+    return 0;
+}
+bool isPerfect(int n){
+    int sum =0;
+    for(int i = 1;i<n-1;i++){
+        if(n%i == 0){
+            sum += i;
+        }
+    }
+
+    if(sum == n){
+        return true;
+    }else{
+    return false;
+    }
+}
+
+
+#algo for final prb
+
+1. input an array 
+2 . find the max val
+3 . find the min val
+4 . replace max with min
+
+
+
+10,50,600,100,5 input 
+
+1
+10,50,5,100,600 output
+
+min_index = 4
+max_index = 2
+
+
+#include<iostream>
+using namespace std;
+int A[100],n;
+void inputArrayElement(int size);
+void displayValue(int A[],int size);
+int getMaxValue(int A[],int n);
+int getMinValue(int A[],int n);
+int getIndexByValue(int A[],int size,int val);
+int main()
+{
+    int n;
+    cout<<"Enter a number : ";
+    cin>>n;
+      inputArrayElement(n);
+      displayValue(A,n);
+      int max = getMaxValue(A,n);
+      int min = getMinValue(A,n);
+      int maxIndex = getIndexByValue(A,n,max);
+      int minIndex = getIndexByValue(A,n,min);
+      A[maxIndex] = min;
+      A[minIndex] = max;
+      cout<<"\nafter working\n";
+       displayValue(A,n);
+    return 0;
+}
+
+void inputArrayElement(int size){
+    for(int i=0;i<size;i++){
+        cout<<"Enter Data : ";
+        cin>>A[i];
+    }
+}
+
+void displayValue(int A[],int size){
+    int i = 0;
+    while(i<size){
+        cout<<A[i]<<" ";
+        i++;
+    }
+}
+
+int getMaxValue(int A[],int n){
+    int max = A[0];
+    for(int i =0;i<n;i++){
+        if(max < A[i]){
+            max = A[i];
+        }
+    }
+    return max;
+}
+int getMinValue(int A[],int n){
+    int min = A[0];
+    for(int i =0;i<n;i++){
+        if(min > A[i]){
+            min = A[i];
+        }
+    }
+    return min;
+}
+
+int getIndexByValue(int A[],int size,int val){
+    for(int i =0;i<size;i++){
+        if(A[i] == val){
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
