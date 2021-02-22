@@ -1,0 +1,53 @@
+#8.How to check a number Strong or not 
+def factorial(n):
+    if(n == 1):
+        return 1
+    else:
+        return  n * factorial(n-1)
+
+def isStrong(n):
+    sum = 0
+    temp = n
+    while(n != 0):
+        rem = n % 10
+        sum += factorial(rem)
+        n = n // 10
+    if sum == temp :
+        return True
+    else:
+        return False
+
+
+n = int(input("Enter a number : "))
+
+if(isStrong(n) == True):
+    print("Strong Number")
+else:
+    print("Not Strong Number")
+
+
+#10.	How to find a Fibonacci number 
+def fibonacci(n):
+    first = 0
+    second = 1
+    for i in range(0,n):
+        if(i<=1):
+            fibo = i
+        else:
+            fibo = first + second
+            first = second
+            second = fibo
+        print(fibo)
+
+n = int(input("Enter range : "))
+fibonacci(n)
+
+
+#11.Swapping two value without extra variable 
+a = 10
+b = 5
+print(a,b)
+a = a+ b
+b = a -b
+a = a - b
+print(a,b)
