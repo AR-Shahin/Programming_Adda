@@ -1,0 +1,114 @@
+#How to find square of a number using function
+def square(n):
+    return n * n
+
+n = int(input('Enter a number : '))
+
+print("Square of  : ",square(n))
+
+#How to find factorial of a number using function
+def factorial(n):
+    sum = 1
+    for i in range (1,n+1):
+        sum *= i
+    return sum
+
+n = int(input('Enter a number : '))
+
+print("Factorial of  : ",factorial(n))
+
+# 3.	How to find factorial of a number using recursion
+
+def factorial(n):
+    if(n == 1):
+        return 1
+    else:
+        return n * factorial(n-1)
+
+n = int(input('Enter a number : '))
+
+print("Factorial of  : ",factorial(n))
+
+
+
+# How to find sum of digit of a number 
+
+def sum_of_digit(n):
+    sum = 0
+    while(n!=0):
+        rem = n%10
+        sum += rem
+        n = n //10
+    return  sum
+
+n = int(input('Enter a number : '))
+
+print("sum_of_digit   : ",sum_of_digit(n))
+
+
+#5.	How to count a number of digit of a number
+
+def count_of_number(n):
+    count = 0
+    while(n!=0):
+        rem = n%10
+        count += 1
+        n = n //10
+    return count
+
+n = int(input('Enter a number : '))
+
+print("Number of digit    : ",count_of_number(n))
+
+6
+
+def isPrimeFunction(n):
+    for i in range(2,n):
+        if(n%i == 0):
+            return True
+        else:
+            return False
+
+n = int(input('Enter a number : '))
+
+#print(isPrimeFunction(n))
+
+if(isPrimeFunction(n) == True):
+    print("Not Prime Number")
+else:
+    print("Prime Number")
+
+
+
+
+#
+
+7.	How to check a number Perfect or not 
+def isPerfect(n):
+    sum = 0
+    for i in range(1,n):
+        if(n%i == 0):
+            sum += i
+    if(n == sum):
+        return True
+    else:
+        return False
+
+
+n = int(input('Enter a number : '))
+
+
+if(isPerfect(n) == True):
+    print("Perfect Number")
+else:
+    print("Not Perfect Number")
+
+
+
+
+
+
+
+
+
+

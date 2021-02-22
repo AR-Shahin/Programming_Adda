@@ -166,18 +166,3 @@ int getIndexByValue(int A[],int size,int val){
     }
     return -1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
